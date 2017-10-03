@@ -1,4 +1,4 @@
-# Thomas Massie, 03.10.2017, Zurich
+# Thomas M. Massie, 03.10.2017, Zurich
 
 
 
