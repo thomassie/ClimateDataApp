@@ -1,0 +1,12 @@
+name: ClimateDataApp
+title: ClimateDataApp
+username:
+account: thomassie
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 221404
+bundleId: 1008169
+url: https://thomassie.shinyapps.io/ClimateDataApp/
+when: 1507015933.01618
+asMultiple: FALSE
+asStatic: FALSE
