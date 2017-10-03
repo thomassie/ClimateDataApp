@@ -20,12 +20,12 @@ library(shinythemes)
 
 # ------------------------------------------
 # Load data.
-dd.allCountries <- read_csv("~/Library/Mobile Documents/com~apple~Clouddocs/Data analysis/Global temperature change/GlobalLandTemperaturesByCountry.csv")
+# dd.allCountries <- read_csv("~/Library/Mobile Documents/com~apple~Clouddocs/Data analysis/Global temperature change/GlobalLandTemperaturesByCountry.csv")
+dd.allCountries <- read_csv("https://raw.githubusercontent.com/thomassie/ClimateDataApp/master/Data/GlobalLandTemperaturesByCountry.csv")
 str(dd.allCountries)
-dd.overall <- read_csv("~/Library/Mobile Documents/com~apple~Clouddocs/Data analysis/Global temperature change/GlobalTemperatures.csv")
+# dd.overall <- read_csv("~/Library/Mobile Documents/com~apple~Clouddocs/Data analysis/Global temperature change/GlobalTemperatures.csv")
+dd.overall <- read_csv("https://raw.githubusercontent.com/thomassie/ClimateDataApp/master/Data/GlobalTemperatures.csv")
 str(dd.overall)
-
-
 
 
 # ------------------------------------------
