@@ -137,12 +137,35 @@ server <- function(input, output) {
                  color = Year)) +
       scale_color_distiller(palette = "Spectral") +
       geom_line(size = 0.8, alpha = 0.3) +
-      theme_classic() +
-      theme(legend.justification = c(0, 0), legend.position = c(0.04, 0.6)) +
+      # theme_classic() +
+      # theme(legend.justification = c(0, 0), legend.position = c(0.04, 0.6)) +
       guides(color = guide_colorbar(barwidth = 0.5, barheight = 6)) +
-      xlab("Month") +
-      ylab("Temperature (°Celcius)") +
-      labs(title = input$selected.country)
+      # xlab("Month") +
+      # ylab("Temperature (°Celcius)") +
+      # labs(title = input$selected.country)
+      labs(x = "Month", 
+           y = "Temperature (°Celcius)",
+           title = expression("What does the temperature track r")) +
+           # subtitle = expression("Storm intensity indicated by minimum in central pressure. \nThe lower the pressure the more intense the storm."),
+           # caption = "Source: NOAA's National Hurricane Center (http://www.nhc.noaa.gov/data/)") +
+      theme(axis.text = element_text(family = "Varela Round"),
+            axis.text.x = element_text(size = 11, colour = "#3C3C3C", face = "bold", vjust = 1),
+            axis.text.y = element_text(size = 11, colour = "#3C3C3C", face = "bold", vjust = 0),
+            axis.ticks = element_line(colour = "#D7D8D8", size = 0.2),
+            axis.ticks.length = unit(5, "mm"),
+            axis.line = element_blank(),
+            plot.title = element_text(face = "bold", hjust = 0, vjust = -0.5, colour = "#3C3C3C", size = 20),
+            plot.subtitle = element_text(hjust = 0, vjust = -5, colour = "#3C3C3C", size = 11),
+            plot.caption = element_text(size = 8, hjust = 1.5, vjust = -0.05, colour = "#7F8182"),
+            panel.background = element_rect(fill = "#FFFFFF"),
+            panel.border = element_blank(),
+            plot.background = element_rect(fill = "#FFFFFF", colour = "#FFFFFF"),
+            panel.grid.major = element_line(colour = "#D7D8D8", size = 0.2),
+            panel.grid.minor = element_line(colour = "#D7D8D8", size = 0.2)) +
+      theme(legend.justification=c(0,1), 
+            legend.position=c(0.05, 0.95),
+            legend.background = element_blank(),
+            legend.key = element_blank())
   })
   
   output$figure2 <- renderPlot({
@@ -159,13 +182,31 @@ server <- function(input, output) {
                  y = Mean.Annu.Temp)) +
       geom_point(size = 0.5, alpha = 0.5) +
       geom_line(size = 0.5, alpha = 0.5) +
-      geom_smooth(color = "#1172B0", alpha = 0.8, span = 0.4) +
+      geom_smooth(color = "#1172B0", alpha = 0.6, span = 0.4) +
       geom_ma(ma_fun = SMA, n = 30, size = 0.4, color = "#F73531", linetype = 1) +
       # theme_bw() +
-      theme_classic() +
-      xlab("Year") +
-      ylab("Temperature (°Celcius)") +
-      labs(title = input$selected.country)
+      # theme_classic() +
+      # xlab("Year") +
+      # ylab("Temperature (°Celcius)") +
+      # labs(title = input$selected.country) +
+      labs(x = "Year",
+           y = "Temperature (°Celcius)") +
+      # subtitle = expression("Storm intensity indicated by minimum in central pressure. \nThe lower the pressure the more intense the storm."),
+      # caption = "Source: NOAA's National Hurricane Center (http://www.nhc.noaa.gov/data/)") +
+      theme(axis.text = element_text(family = "Varela Round"),
+            axis.text.x = element_text(size = 11, colour = "#3C3C3C", face = "bold", vjust = 1),
+            axis.text.y = element_text(size = 11, colour = "#3C3C3C", face = "bold", vjust = 0),
+            axis.ticks = element_line(colour = "#D7D8D8", size = 0.2),
+            axis.ticks.length = unit(5, "mm"),
+            axis.line = element_blank(),
+            plot.title = element_text(face = "bold", hjust = 0, vjust = -0.5, colour = "#3C3C3C", size = 20),
+            plot.subtitle = element_text(hjust = 0, vjust = -5, colour = "#3C3C3C", size = 11),
+            plot.caption = element_text(size = 8, hjust = 1.5, vjust = -0.05, colour = "#7F8182"),
+            panel.background = element_rect(fill = "#FFFFFF"),
+            panel.border = element_blank(),
+            plot.background = element_rect(fill = "#FFFFFF", colour = "#FFFFFF"),
+            panel.grid.major = element_line(colour = "#D7D8D8", size = 0.2),
+            panel.grid.minor = element_line(colour = "#D7D8D8", size = 0.2))
   })
   
 }
