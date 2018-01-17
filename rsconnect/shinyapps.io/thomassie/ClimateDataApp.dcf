@@ -5,6 +5,8 @@ account: thomassie
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 221412
-bundleId: 1008204
+bundleId: 1179812
 url: https://thomassie.shinyapps.io/climatedataapp/
-when: 1507018356.63621
+when: 1516197743.02011
+asMultiple: FALSE
+asStatic: FALSE
