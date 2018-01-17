@@ -14,12 +14,12 @@ library(tidyquant)
 library(scales)
 library(shiny)
 library(shinythemes)
-library(showtext)
+# library(showtext)
 
 
 
-# Add font Varela Round.
-font_add_google(name = "Varela Round", family = "Varela Round", regular.wt = 400, bold.wt = 700)
+# # Add font Varela Round.
+# font_add_google(name = "Varela Round", family = "Varela Round", regular.wt = 400, bold.wt = 700)
 
 
 
@@ -154,14 +154,13 @@ server <- function(input, output) {
            title = paste("How did temperatures change in ", input$selected.country, "?"),
            subtitle = paste("...during the years ", input$min.year, " and ", input$max.year)) +
            # caption = "Source: NOAA's National Hurricane Center (http://www.nhc.noaa.gov/data/)") +
-      theme(axis.text = element_text(family = "Varela Round"),
-            axis.text.x = element_text(size = 11, colour = "#3C3C3C", face = "bold", vjust = 1),
-            axis.text.y = element_text(size = 11, colour = "#3C3C3C", face = "bold", vjust = 0),
+      theme(axis.text.x = element_text(size = 11, colour = "#3C3C3C", vjust = 1),
+            axis.text.y = element_text(size = 11, colour = "#3C3C3C", vjust = 0),
             axis.ticks = element_line(colour = "#D7D8D8", size = 0.2),
             axis.ticks.length = unit(5, "mm"),
             axis.line = element_blank(),
             plot.title = element_text(face = "bold", hjust = 0, vjust = -0.5, colour = "#3C3C3C", size = 16),
-            plot.subtitle = element_text(hjust = 0, vjust = -1, colour = "#3C3C3C", size = 11),
+            plot.subtitle = element_text(hjust = 0, vjust = -1, colour = "#3C3C3C", size = 12),
             plot.caption = element_text(size = 8, hjust = 1.5, vjust = -0.05, colour = "#7F8182"),
             panel.background = element_rect(fill = "#FFFFFF"),
             panel.border = element_blank(),
@@ -199,14 +198,13 @@ server <- function(input, output) {
            y = "Temperature (°Celcius)") +
       # subtitle = expression("Storm intensity indicated by minimum in central pressure. \nThe lower the pressure the more intense the storm."),
       # caption = "Source: NOAA's National Hurricane Center (http://www.nhc.noaa.gov/data/)") +
-      theme(axis.text = element_text(family = "Varela Round"),
-            axis.text.x = element_text(size = 11, colour = "#3C3C3C", face = "bold", vjust = 1),
-            axis.text.y = element_text(size = 11, colour = "#3C3C3C", face = "bold", vjust = 0),
+      theme(axis.text.x = element_text(size = 11, colour = "#3C3C3C", vjust = 1),
+            axis.text.y = element_text(size = 11, colour = "#3C3C3C", vjust = 0),
             axis.ticks = element_line(colour = "#D7D8D8", size = 0.2),
             axis.ticks.length = unit(5, "mm"),
             axis.line = element_blank(),
-            plot.title = element_text(face = "bold", hjust = 0, vjust = -0.5, colour = "#3C3C3C", size = 20),
-            plot.subtitle = element_text(hjust = 0, vjust = -5, colour = "#3C3C3C", size = 11),
+            plot.title = element_text(face = "bold", hjust = 0, vjust = -0.5, colour = "#3C3C3C", size = 16),
+            plot.subtitle = element_text(hjust = 0, vjust = -5, colour = "#3C3C3C", size = 12),
             plot.caption = element_text(size = 8, hjust = 1.5, vjust = -0.05, colour = "#7F8182"),
             panel.background = element_rect(fill = "#FFFFFF"),
             panel.border = element_blank(),
