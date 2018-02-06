@@ -71,7 +71,7 @@ ui <- fluidPage(theme = shinytheme("simplex"),
 
 
 # ------------------------------------------
-# Define UI for application that draws a histogram
+# Define server.
 server <- function(input, output) {
   
   dataInput <- reactive({
